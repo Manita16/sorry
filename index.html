@@ -203,7 +203,7 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             h1 {
-                font-size: 4rem;
+                font-size: 5rem;
             }
 
             p {
@@ -317,12 +317,12 @@
             "You are my forever love! ❤️", "Your smile makes my world brighter! 🌟"
         ];
         const scrollingText = document.getElementById('scrollingText');
-        scrollingText.innerHTML += scrollingText.innerHTML;
         messages.forEach(text => {
             let div = document.createElement('div');
             div.classList.add('text-line');
             div.innerText = text;
             scrollingText.appendChild(div);
+            scrollingText.innerHTML += scrollingText.innerHTML;
         });
 
         // No Button Movement
