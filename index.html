@@ -324,16 +324,6 @@
             scrollingText.appendChild(div);
         });
 
-        // Rotating Love Words
-        const rotatingWords = document.getElementById('rotatingWords');
-        messages.forEach((text, index) => {
-            let span = document.createElement('span');
-            span.classList.add('word');
-            span.innerText = text;
-            span.style.animationDelay = `${index * (12 / messages.length)}s`; // Delay for spacing
-            rotatingWords.appendChild(span);
-        });
-
         // No Button Movement
         const noButton = document.querySelector('.no-button');
         const moveButton = () => {
