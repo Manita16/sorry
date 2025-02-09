@@ -23,7 +23,7 @@
             font-size: 3rem;
             color: #f1c40f;
             animation: bounceIn 1.5s ease-in-out;
-            margin-top: 50px; /* Increased space above the first line */
+            margin-top: 50px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
@@ -150,10 +150,10 @@
         }
 
         @keyframes rotateWords {
-            0% { opacity: 0; transform: rotate(0deg) translateY(150px) rotate(0deg); }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { opacity: 0; transform: rotate(360deg) translateY(150px) rotate(-360deg); }
+            0% { opacity: 0; transform: translateY(100%) rotate(0deg); }
+            10% { opacity: 1; transform: translateY(0) rotate(0deg); }
+            90% { opacity: 1; transform: translateY(0) rotate(360deg); }
+            100% { opacity: 0; transform: translateY(-100%) rotate(360deg); }
         }
 
         /* Image Gallery */
@@ -168,7 +168,7 @@
         .gallery img {
             width: 100%;
             max-width: 300px;
-            height: auto; /* Adjusted for mobile */
+            height: auto;
             border-radius: 20px;
             object-fit: cover;
             transition: transform 0.5s;
@@ -190,10 +190,22 @@
 
         video {
             width: 100%;
-            max-width: 500px;
-            height: auto; /* Adjusted for mobile */
+            max-width: 300px; /* Smaller video size */
+            height: auto;
             border-radius: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        video::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)); /* Gradient overlay */
+            border-radius: 20px;
         }
 
         /* Glowing Animated Text */
@@ -229,12 +241,12 @@
 
             .gallery img {
                 max-width: 100%;
-                height: auto; /* Adjusted for mobile */
+                height: auto;
             }
 
             video {
                 max-width: 100%;
-                height: auto; /* Adjusted for mobile */
+                height: auto;
             }
 
             .animated-text {
@@ -242,11 +254,11 @@
             }
 
             .rotating-words {
-                height: 200px; /* Adjusted for mobile */
+                height: 200px;
             }
 
             .word {
-                font-size: 1.2rem; /* Adjusted for mobile */
+                font-size: 1.2rem;
             }
         }
     </style>
