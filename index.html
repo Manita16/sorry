@@ -203,7 +203,7 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             h1 {
-                font-size: 2rem;
+                font-size: 4rem;
             }
 
             p {
@@ -317,6 +317,7 @@
             "You are my forever love! ❤️", "Your smile makes my world brighter! 🌟"
         ];
         const scrollingText = document.getElementById('scrollingText');
+        scrollingText.innerHTML += scrollingText.innerHTML;
         messages.forEach(text => {
             let div = document.createElement('div');
             div.classList.add('text-line');
